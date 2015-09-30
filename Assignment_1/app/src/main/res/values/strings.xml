@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">Assignment_1</string>
+    <!--Start original labels-->
+    <string name="hello_world">Mortgage Calculator!</string>
+    <string name="principle_label">Principle Total:</string>
+    <string name="principle_hint">Enter the total principle of the loan</string>
+    <string name="interest_rate_label">Interest Rate:</string>
+    <string name="loan_term_label">Loan Term:</string>
+    <string name="first_label">15-year loan</string>
+    <string name="second_label">20-year loan</string>
+    <string name="third_label">30-year loan</string>
+
+    <string name="tax_insurance_label">Include Tax and Insurance:</string>
+    <string name="tax_checkbox_label">Tax and Insurance Included</string>
+    <string name="calculate_label">Calculate</string>
+
+    <string name="monthly_payment_label">Monthly Note:</string>
+
+    <!--End original labels-->
+    <string name="action_settings">Settings</string>
+
+</resources>
