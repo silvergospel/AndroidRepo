@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab_05</string>
+
+    <string name="hello_world">Lab 05</string>
+    <string name="action_settings">Settings</string>
+    <string name="web_uri">http://amazon.com</string>
+    <string name="phone_number">+194912344444</string>
+    <string name="web_button_text">Launch Web Browser</string>
+    <string name="phone_button_text">Launch Phone Dialer</string>
+</resources>
