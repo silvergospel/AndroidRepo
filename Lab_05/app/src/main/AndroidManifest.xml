@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".BrowserActivity"
             android:label="@string/title_activity_browser"
@@ -29,6 +30,7 @@
                 <data android:scheme="http"/>
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
