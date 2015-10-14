@@ -7,4 +7,6 @@
     <string name="phone_number">+194912344444</string>
     <string name="web_button_text">Launch Web Browser</string>
     <string name="phone_button_text">Launch Phone Dialer</string>
+    <string name="title_activity_browser">BrowserActivity</string>
+    <string name="default_text">[URL displayed here]</string>
 </resources>
