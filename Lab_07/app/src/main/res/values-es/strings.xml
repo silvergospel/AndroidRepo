@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Los Lab_07</string>
+    <string name="hello_world">Los Lab_07</string>
+    <string name="edit_message">Por favor, introduzca su nombre de</string>
+    <string name="button_send">Enviar</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_main">PrincipalActividad</string>
+    <string name="title_activity_display">FijarActividad</string>
+    <string name="greeting">Hola,</string>
+
+</resources>
