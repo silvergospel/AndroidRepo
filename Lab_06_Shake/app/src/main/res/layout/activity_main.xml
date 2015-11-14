@@ -13,24 +13,28 @@
         android:id="@+id/colorText"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:height="50dp"
         />
 
     <TextView
         android:id="@+id/xVal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="xVal"
         />
 
     <TextView
         android:id="@+id/yVal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="yVal"
         />
 
     <TextView
         android:id="@+id/zVal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="zVal"
         />
 
 

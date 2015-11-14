@@ -26,32 +26,11 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         initializeVariables();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void initializeVariables(){
@@ -60,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         textz = (TextView) findViewById(R.id.zVal);
 
         view = (TextView) findViewById(R.id.colorText);
-        view.setBackgroundColor(Color.BLUE);
+        if(view != null) view.setBackgroundColor(Color.BLUE);
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         sensorManager.registerListener(this,
@@ -83,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         float y = event.values[1];
         float z = event.values[2];
 
-        textx.setText("X axis =" + "\t\t" + x);
-        textx.setText("Y axis =" + "\t\t" + y);
-        textx.setText("Z axis =" + "\t\t" + z);
+        if(textx != null)textx.setText("X axis = \t\t" + x);
+        if(texty != null)texty.setText("Y axis = \t\t" + y);
+        if(textz != null)textz.setText("Z axis = \t\t" + z);
     }
 
     @Override
@@ -119,9 +98,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             lastUpdate = actualTime;
             Toast.makeText(MainActivity.this, "Feeling a lil shaky!", Toast.LENGTH_SHORT).show();
             if(colorToggle){
-                view.setBackgroundColor(Color.BLUE);
+                if(view != null)view.setBackgroundColor(Color.BLUE);
             } else {
-                view.setBackgroundColor(Color.RED);
+                if(view != null)view.setBackgroundColor(Color.RED);
             }
             colorToggle = !colorToggle;
         }
