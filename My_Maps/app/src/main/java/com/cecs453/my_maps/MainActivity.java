@@ -115,46 +115,17 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        int locationCount = 0;
-        double lat=0;
-        double lng=0;
-        float zoom=0;
-
-        // Number of locations available in the SQLite database table
-        locationCount = data.getCount();
-
-        // Move the current record pointer to the first row of the table
         data.moveToFirst();
+        do
+        {
+            drawMarker(new LatLng(data.getDouble(data.getColumnIndex(LocationDB.FIELD_LAT)),data.getDouble(data.getColumnIndex(LocationDB.FIELD_LNG))));
+        }while(data.moveToNext());
 
-        for(int i=0;i<locationCount;i++){
-
-            // Get the latitude
-            lat = data.getDouble(data.getColumnIndex(LocationDB.FIELD_LAT));
-
-            // Get the longitude
-            lng = data.getDouble(data.getColumnIndex(LocationDB.FIELD_LNG));
-
-            // Get the zoom level
-            zoom = data.getFloat(data.getColumnIndex(LocationDB.FIELD_ZOOM));
-
-            // Creating an instance of LatLng to plot the location in Google Maps
-            LatLng location = new LatLng(lat, lng);
-
-            // Drawing the marker in the Google Maps
-            drawMarker(location);
-
-            // Traverse the pointer to the next row
-            data.moveToNext();
-        }
-        //data.moveToFirst();
-        //iterate through result set
-        //do
-        //{
-        //    drawMarker(new LatLng(data.getColumnIndex(LocationDB.FIELD_LAT), data.getColumnIndex(LocationDB.FIELD_LNG)));
-        //}while(data.moveToNext());
-        //move to first entries location
         if(data.getCount() > 0){
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng), zoom));
+            data.moveToFirst();
+            LatLng tempLatLng = new LatLng(data.getDouble(data.getColumnIndex(LocationDB.FIELD_LAT)),data.getDouble(data.getColumnIndex(LocationDB.FIELD_LNG)));
+            float zoom = data.getFloat(data.getColumnIndex(LocationDB.FIELD_ZOOM));
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(tempLatLng, zoom));
             Toast.makeText(MainActivity.this, "Number of entries = " + data.getCount(), Toast.LENGTH_SHORT).show();
         } else {
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(LOCATION_ECS, 10));
